@@ -463,6 +463,55 @@ height: 114px;
   left: -3px;
 }
 
+/* ------------ Тестовые варианты плеера ------------ */
+
+.video-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+}
+
+.video-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 640px;
+  height: 360px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+  display: none;
+}
+
+.video-container.show-video {
+  display: block;
+}
+
+
 .videowrap {
   max-width: 1240px;
   margin: 0 auto;
@@ -481,53 +530,21 @@ height: 114px;
   height: 100%;
   border: 0;
 }
-
-.video {
-z-index: 10;
-}
-
-.video iframe {
-
-}
-.video input {
-  display: none;
-}
-.video-container {
-  display: none;
-  position: relative;
-  bottom: 0;
-}
-.video img {
-  min-width: 196px;
-}
-
-#video-toggle:checked + .video-container {
-  display: block;  
+.video-thumbnail {
   position: absolute;
-  margin: 0 calc( 50% - 300px);
-}
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 
-#video-2:checked + .video-container {
-  display: block;  
-  position: absolute;
-  margin: 0 calc( 50% - 300px);
+  background-image: url('./dist/img/play-button.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 25%;
 }
+/* ------------ Тестовые варианты плеера КОНЕЦ------------ */
 
-.hide-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  padding: 8px;
-  background-color: rgb(247, 0, 0);
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.video-container iframe {
-  width: 600px;
-  height: 400px;
-}
 
 .img-content {
 }

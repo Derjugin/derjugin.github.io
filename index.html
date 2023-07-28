@@ -40,7 +40,7 @@
       </div>
     </header>
     <main class="main">
-      <section class="main-content">
+      <section class="main-content">        
         <div class="hero">
           <div class="title-content">
             <div class="title-desc-content">
@@ -62,25 +62,20 @@
                   <span class="body-text">Счастливых клиентов</span>
                 </div>
               </div>
-              <div class="video">    
-                
-              <label for="video-toggle">
-                <img src="./dist/img/video.png" alt="Video 1">
-              </label>
-              <input type="checkbox" id="video-toggle">
+
+              <!-- ----------------- Видео с YouTube ----------------- -->
+
+              <img src="./dist/img/video.png" alt="Video 1" class="video-trigger" data-video="https://www.youtube.com/embed/TX9qSaGXFyg">
+              
               <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/TX9qSaGXFyg" frameborder="0" allowfullscreen ></iframe>
-                <span class="hide-button" onclick="hideVideo()">X</span>
-              </div>              
-              <script>
-                function hideVideo() {
-                  var videoToggle = document.getElementById("video-toggle");
-                  if (videoToggle.checked) {
-                    videoToggle.checked = false;
-                  }
-                }
-              </script>                          
+                  <div class="video-wrapper">
+                      <iframe src="" frameborder="0" allowfullscreen></iframe>
+                      <div class="close-button">&#10006;</div>
+                  </div>
               </div>
+
+              <!-- ----------------- Видео с YouTube КОНЕЦ ----------------- -->
+
             </div>
           </div>
           <div class="img-content">
@@ -114,23 +109,8 @@
         <div class="about-us-img-wrapper">
           <img class="about-us-img" src="./dist/img/hand-up.png" alt="">
 
-          <div class="video">                      
-            <label for="video-2" class="video-2">
-              <img src="./dist/img/video-1.png" alt="Video 1">
-            </label>
-            <input type="checkbox" id="video-2">
-            <div class="video-container">
-              <iframe src="https://www.youtube.com/embed/TX9qSaGXFyg" frameborder="0" allowfullscreen ></iframe>
-              <span class="hide-button" onclick="hideVideo2()">X</span>
-            </div>            
-            <script>
-              function hideVideo2() {
-                var videoToggle = document.getElementById("video-2");
-                if (videoToggle.checked) {
-                  videoToggle.checked = false;
-                }
-              }
-            </script>
+          <div class="video"> 
+            <img src="./dist/img/video-1.png" alt="Video 2" class="video-trigger" data-video="https://www.youtube.com/embed/E0c8lJkh72I">
           </div>
         </div>
 
@@ -272,7 +252,8 @@
         </div>        
         <div class="videowrap">
           <div class="videoblock">
-            <iframe src="https://www.youtube.com/embed/TX9qSaGXFyg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <img src="./dist/img/thumbnail.png" alt="">
+            <div class="video-thumbnail" onclick="loadVideo('https://www.youtube.com/embed/TX9qSaGXFyg')"></div>
           </div>
         </div>
       </section>     

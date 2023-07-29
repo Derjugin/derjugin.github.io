@@ -93,6 +93,11 @@ h5 {
 
 }
 
+a.active {
+  color: #fff;
+  font-family: 'Tektur Medium', Arial, Helvetica, sans-serif;
+}
+  
 hr {
   margin-top: 12px;
   border-top: 1px solid #ffffff59;
@@ -175,21 +180,34 @@ a, a:link, a:visited {
 }
 
 .btn-action {
+    position: relative;
     border: 1px solid;
     border-image: linear-gradient(90deg,#0cbaf1,#e95ce9) 1;
-    transition: .5s;
+    z-index: 1;
 }
-.btn-action:hover {
-    background: linear-gradient(90deg,#0cbaf1,#e95ce9);
+
+.btn-action::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,#0cbaf1,#e95ce9);
+  transition: opacity 0.5s linear;
+  z-index: -1;
+  opacity: 0;
 }
+
+.btn-action:hover::before {
+  opacity: 1;
+}
+
 .btn {
     background: linear-gradient(90deg,#0cbaf1,#e95ce9);
 }
-a.active {
-  color: #fff;
-  font-family: 'Tektur Medium', Arial, Helvetica, sans-serif;
-}
-  
+
+
 /* ---------Мобильное меню  --------- */
 .overlay-content {
   display: flex;

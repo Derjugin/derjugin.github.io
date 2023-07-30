@@ -98,7 +98,7 @@ h5 {
 
 }
 
-a.active {
+a:visited.active, a.active {
   color: #fff;
   font-family: 'Tektur Medium', Arial, Helvetica, sans-serif;
 }
@@ -900,13 +900,6 @@ height: 114px;
   flex-direction: row;
 }
 
-.our-team .main-wrapper {
-  width: auto;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: space-between;
-}
-
 .service .body-text {
 width: 50%;
 }
@@ -983,7 +976,175 @@ width: 50%;
   text-align: center;
 }
 }
-/* ========== MAIN END========== */
+/* ========== MAIN END ========== */
+
+
+/* ========== ABOUT ========== */
+@media (min-width: 800px) {
+  
+  .our-team .main-wrapper {
+    width: auto;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 799px) {
+  .team-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .our-team .service-title {
+    text-align: center;
+
+  }
+
+}
+
+.team-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.member {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; 
+  border: 1px solid rgba(255,255,255, 0.3);
+  padding: 10px;
+  overflow: hidden;
+}
+  .member:hover {
+    border-image: linear-gradient(90deg, rgb(12, 186, 241), rgb(233, 92, 233)) 1 / 1 / 0 stretch;
+  }
+.member-img {
+  position: relative;
+}
+.member-bg {
+}
+.member-bg::before {
+  content: '';
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(50, 70, 188, 0.00) 0%, #192883 100%);
+}
+.member-bio {
+  position: absolute;
+  padding-bottom: 26px;
+  text-align: center;
+}
+
+.faq-section, .partners-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.faq-section .main-wrapper,
+.partners-section .main-wrapper {
+  align-items: center;
+  width: 100%;
+}
+
+.partners {
+
+}
+
+.faq {  
+  max-width: 790px;
+  width: 100%;
+}
+
+.faq details {
+  width: 100%;
+  margin-bottom: 48px;
+  text-align: left;
+  background-color: #252532;
+  border: 1px solid rgba(255,255,255, 0.3);
+}
+
+.faq .h7 {
+  font-size: 20px;
+  margin-bottom: 0;
+  padding: 30px;
+}
+
+.faq hr {
+  margin: 0 30px;
+  margin-bottom: 12px;
+}
+
+.faq p {
+  padding: 0 30px 30px;
+}
+
+/* ========== ABOUT END========== */
+
+
+/* ========== OUR MEMBER ========== */
+.our-members .main-wrapper {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.our-members .service-title {
+  width: 100%;
+  text-align: center;
+}
+
+.members {
+  display: grid;
+  gap: 30px;
+}
+
+.members .service-title {
+  text-align: center;
+
+}
+
+.members .member-img {
+  width: 100%;
+}
+
+.members .member-img img {
+  width: 100%;
+}
+.member-soc {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  
+  width: 100%;
+  bottom: -100px;
+  gap: 24px;
+  padding: 0 20px;
+  transition: .5s;
+}
+
+.member:hover .member-soc {
+  bottom: 96px;
+}
+
+@media (min-width: 500px) and (max-width: 900px) {
+  .members {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 901px) {
+  .members {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+/* ========== OUR MEMBER ========== */
 
 
 /* ========== CONTACTS ========== */
@@ -1070,115 +1231,6 @@ textarea {
   padding: 15px;
 }
 /* ========== CONTACTS END========== */
-
-
-/* ========== ABOUT ========== */
-@media (min-width: 800px) {
-  
-  .our-team .main-wrapper {
-    width: auto;
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: space-between;
-  }
-}
-
-@media (max-width: 799px) {
-  .our-team .main-wrapper {
-    align-items: center;
-  }
-  .team-cards {
-    flex-direction: column;
-    align-items: center;
-  }
-  .our-team .service-title {
-    text-align: center;
-
-  }
-}
-
-.team-cards {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-}
-
-.member {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end; 
-  border: 1px solid rgba(255,255,255, 0.3);
-  padding: 10px;
-}
-  .member:hover {
-    border-image: linear-gradient(90deg, rgb(12, 186, 241), rgb(233, 92, 233)) 1 / 1 / 0 stretch;
-  }
-.member-img {
-  position: relative;
-}
-.member-bg {
-}
-.member-bg::before {
-  content: '';
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-  position: absolute;
-  bottom: 0;
-  background: linear-gradient(180deg, rgba(50, 70, 188, 0.00) 0%, #192883 100%);
-}
-.member-bio {
-  position: absolute;
-  text-align: center;
-}
-
-.faq-section, .partners-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-.faq-section .main-wrapper,
-.partners-section .main-wrapper {
-  align-items: center;
-  width: 100%;
-}
-
-.partners {
-
-}
-
-.faq {  
-  max-width: 790px;
-  width: 100%;
-}
-
-.faq details {
-  width: 100%;
-  margin-bottom: 48px;
-  text-align: left;
-  background-color: #252532;
-  border: 1px solid rgba(255,255,255, 0.3);
-}
-
-.faq .h7 {
-  font-size: 20px;
-  margin-bottom: 0;
-  padding: 30px;
-}
-
-.faq hr {
-  margin: 0 30px;
-  margin-bottom: 12px;
-}
-
-.faq p {
-  padding: 0 30px 30px;
-}
-
-/* ========== ABOUT END========== */
 
 
 /* ========== SERVICE ========== */
@@ -1285,7 +1337,8 @@ textarea {
 }
 .vk, 
 .tg,
-.youtube {
+.youtube,
+.gh {
   position: relative;
   background-position: center;
   display: inline-block;
@@ -1302,6 +1355,9 @@ textarea {
 
 .youtube {
   background-image: url(./dist/img/icon-youtube.svg);
+}
+.gh {
+  background-image: url(./dist/img/icon-github.svg);
 }
 
 @media (max-width: 799px) {

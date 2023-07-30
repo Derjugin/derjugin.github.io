@@ -489,10 +489,9 @@ height: 114px;
   height: 100%;
   border: 0;
 
-  background-image: url('./dist/img/play-button.svg');
+  background-image: url('./dist/img/play_button.svg');
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 25%;
 }
 /* ------------ Тестовые варианты плеера КОНЕЦ------------ */
 
@@ -980,27 +979,6 @@ width: 50%;
 
 
 /* ========== ABOUT ========== */
-@media (min-width: 800px) {
-  
-  .our-team .main-wrapper {
-    width: auto;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-}
-
-@media (max-width: 799px) {
-  .team-cards {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .our-team .service-title {
-    text-align: center;
-
-  }
-
-}
 
 .team-cards {
   display: flex;
@@ -1039,6 +1017,10 @@ width: 50%;
   position: absolute;
   padding-bottom: 26px;
   text-align: center;
+}
+
+.show-team {
+  display: none;
 }
 
 .faq-section, .partners-section {
@@ -1083,6 +1065,48 @@ width: 50%;
 
 .faq p {
   padding: 0 30px 30px;
+}
+
+.show-team {
+  display: none;
+}
+
+.hide-team {
+  margin-top: 60px;
+}
+
+@media (max-width: 799px) {
+  .team-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .our-team .service-title {
+    text-align: center;
+  }  
+
+  .our-team .main-wrapper {
+    align-items: center;    
+  }
+
+}
+
+@media (min-width: 800px) {
+  
+  .our-team .main-wrapper {
+    width: auto;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .show-team {
+    display: block;
+  }
+
+  .hide-team {
+    display: none;
+  }
+  
 }
 
 /* ========== ABOUT END========== */
@@ -1132,6 +1156,7 @@ width: 50%;
 .member:hover .member-soc {
   bottom: 96px;
 }
+
 
 @media (min-width: 500px) and (max-width: 900px) {
   .members {

@@ -90,10 +90,12 @@ document.querySelector('.btn').addEventListener('click', function(event) {
   let name = document.getElementById('name').value;
   let secondname = document.getElementById('secondname').value;
   let phone = document.querySelector('input[type="tel"]').value;
+  let email = document.querySelector('input[type="email"]').value;
   let message = document.querySelector('.message').value;
   
   console.log('Имя: ' + name);
   console.log('Фамилия: ' + secondname);
+  console.log('E-mail: ' + email);
   console.log('Телефон: ' + phone);
   console.log('Сообщение: ' + message);
   
@@ -101,6 +103,7 @@ document.querySelector('.btn').addEventListener('click', function(event) {
   popup.document.write('<h1>Поля выведены в консоль</h1>');
   popup.document.write('<p>Имя: ' + name + '</p>');
   popup.document.write('<p>Фамилия: ' + secondname + '</p>');
+  popup.document.write('<p>E-mail: ' + email + '</p>');
   popup.document.write('<p>Телефон: ' + phone + '</p>');
   popup.document.write('<p>Сообщение: ' + message + '</p>');
 });

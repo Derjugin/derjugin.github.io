@@ -87,17 +87,17 @@ prevButton.onclick = function() {
 document.querySelector('.btn').addEventListener('click', function(event) {
   event.preventDefault(); // предотвращаем отправку формы
   
-  var name = document.getElementById('name').value;
-  var secondname = document.getElementById('secondname').value;
-  var phone = document.querySelector('input[type="tel"]').value;
-  var message = document.querySelector('.message').value;
+  let name = document.getElementById('name').value;
+  let secondname = document.getElementById('secondname').value;
+  let phone = document.querySelector('input[type="tel"]').value;
+  let message = document.querySelector('.message').value;
   
   console.log('Имя: ' + name);
   console.log('Фамилия: ' + secondname);
   console.log('Телефон: ' + phone);
   console.log('Сообщение: ' + message);
   
-  var popup = window.open('', '', 'width=350,height=350,top=' + (window.innerHeight/2 - 175) + ',left=' + (window.innerWidth/2 - 175));
+  let popup = window.open('', '', 'width=350,height=350,top=' + (window.innerHeight/2 - 175) + ',left=' + (window.innerWidth/2 - 175));
   popup.document.write('<h1>Поля выведены в консоль</h1>');
   popup.document.write('<p>Имя: ' + name + '</p>');
   popup.document.write('<p>Фамилия: ' + secondname + '</p>');

@@ -206,7 +206,8 @@ height: 114px;
 }
 
 .menu-first-level {
-  color: #D1D1D1
+  color: #D1D1D1;  
+  cursor: pointer;
 }
 
 .menu-second-level {
@@ -221,6 +222,41 @@ height: 114px;
   transition: 1s;
   opacity: 0;
 }
+
+/* меню по нажатию */
+.first-level {
+  position: relative;
+  color: #D1D1D1;  
+  cursor: pointer;
+}
+
+
+.second-level {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 200px;
+  padding: 14px;
+  gap: 5px;
+  left: 0;
+  transition: 1s;
+  opacity: 0;
+  pointer-events: none; 
+  transition: opacity 0.5s ease; 
+}
+
+.second-level.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.second-level a {
+  color: #D1D1D1;
+}
+
+/* конец меню по нажатию */
 
   .menu-first-level:hover > .menu-second-level {
     position: relative;
@@ -240,6 +276,13 @@ height: 114px;
     z-index: -2;
   }
 .menu-first-level img {
+  position: relative;
+  width: 20px;
+  top: 4px;
+  transition: 1s;
+}
+
+.first-level img {
   position: relative;
   width: 20px;
   top: 4px;
@@ -847,7 +890,7 @@ height: 114px;
 }
 
 .contact-wrapper {
-  display: grid;
+  /* display: grid; */
   gap: 32px;
 }
 
@@ -897,6 +940,72 @@ textarea {
   height: 50px;
   padding: 15px;
 }
+
+.slider {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.contacts-sl {
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+
+.slider-image {
+  width: 100%;
+  height: 300px;
+
+  position: absolute;
+  top: 0;
+  
+  object-fit: cover;
+  opacity: 0;
+
+  transition: 2s;
+}
+
+.show {
+  opacity: 1;
+}
+
+.actions {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.next,
+.prev {
+  width: 60px;
+  height: 60px;
+  border-top: 10px solid #0cbaf1;
+  border-right: 10px solid #0cbaf1;
+  background: none;
+}
+
+.next {
+  transform: rotate(45deg);
+}
+
+.prev {
+  transform: rotate(-135deg);
+}
+
+.next:hover,
+.prev:hover {
+  border-top: 10px solid #e95ce9;
+  border-right: 10px solid #e95ce9;
+}
+
+
+e95ce9
 /* ========== CONTACTS END========== */
 
 
@@ -1077,124 +1186,22 @@ textarea {
 
 /* ========== АДАПТИВЫ ========== */
 
-@media (max-width: 570px) {
-  .happy-cliens-text {  
-    width: 100px;
+@media (min-width: 800px) and (max-width:1123px) {
+  .card-wrapper {
+    height: 432px;
+  }
+  
+  .price-cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
   }
 }
 
-@media (max-width: 799px) {
-
-  .heading {
-      font-size: 48px;
-  }
-    ul {
-    flex-direction: column;
-  }
-  .burger {
-      display: block;
-      cursor: pointer;
-  }
-  .overlay {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0, 0.9);
-    overflow-x: hidden;
-    transition: 0.5s;
-  }
-
-  .overlay-content {
-    position: relative;
-    display: flex;
-    align-items: flex-start;
-    top: 100px;
-    margin: 30px;
-    gap: 20px;
-  }
-
-  .overlay .closebtn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 50px;
-  }
-
-  .img-content {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    overflow: hidden;
-  }
-
-  .man-img {
-    right: -120px;
-    height: 422px;
-  }
-
-  .img-wrapper {
-    text-align: right;
-  }
-
-  .section-img {
-    height: 454px;
-  }
-
-  .section-flex .wrapper-right, 
-  .section-flex .wrapper-left {
-    justify-content: center;
-  }
-
-  .subscribe-wrapper {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 8px;
-  }
-
-  .happy-cliens {
-    margin-bottom: 120px;
-  }
-
-  .wrapper-why-choose-us {  
-    flex-direction: column;
-  }
-
-  .team-cards {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .our-team .service-title {
-    text-align: center;
-  }  
-
-  .our-team .main-wrapper {
-    align-items: center;    
-  }
-    
-  .footer-wrapper {
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .footer-logo-wrapper {
-    flex-direction: row;
-    margin-bottom: 70px;
-  }
-}
-
-
-@media (min-width: 500px) and (max-width: 900px) {
+@media (min-width: 901px) {
   .members {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
-
 
 @media (min-width: 800px) {
   main {
@@ -1217,22 +1224,25 @@ textarea {
     max-width: 600px;
  }
  
- .overlay {
-    width: 100%;
- }
+  .overlay {
+      width: 100%;
+  }
 
- .overlay-content {
+  .overlay-content {
     display: flex;
     width: 100%;
     flex-direction: row;
     justify-content: space-evenly;
-
- }
- 
+  }
+  
   .menu-first-level:hover > .menu-second-level {
     position: absolute;
     margin-top: 25px;
     margin-left: -48px;
+  }
+
+.second-level {
+    position: absolute;
   }
 
   .burger {
@@ -1442,21 +1452,137 @@ textarea {
   .footer-copyrignt {
     max-width: 1280px;
   }
-}
 
-@media (min-width: 901px) {
-  .members {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (min-width: 800px) and (max-width:1123px) {
-  .card-wrapper {
-    height: 432px;
+  .slider {
+    width: 700px;
   }
   
-  .price-cards {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+  .contacts-sl {
+    width: 700px;
+  }
+  
+  .slider-image {
+    width: 700px;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 900px) {
+  .members {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 799px) {
+
+  .heading {
+      font-size: 48px;
+  }
+    ul {
+    flex-direction: column;
+  }
+  .burger {
+      display: block;
+      cursor: pointer;
+  }
+  .overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+
+  .overlay-content {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    top: 100px;
+    margin: 30px;
+    gap: 20px;
+  }
+
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 50px;
+  }
+
+  .img-content {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+  }
+
+  .second-level.open {
+    position: relative;
+  }
+
+  .man-img {
+    right: -120px;
+    height: 422px;
+  }
+
+  .img-wrapper {
+    text-align: right;
+  }
+
+  .section-img {
+    height: 454px;
+  }
+
+  .section-flex .wrapper-right, 
+  .section-flex .wrapper-left {
+    justify-content: center;
+  }
+
+  .subscribe-wrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .happy-cliens {
+    margin-bottom: 120px;
+  }
+
+  .wrapper-why-choose-us {  
+    flex-direction: column;
+  }
+
+  .team-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .our-team .service-title {
+    text-align: center;
+  }  
+
+  .our-team .main-wrapper {
+    align-items: center;    
+  }
+    
+  .footer-wrapper {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .footer-logo-wrapper {
+    flex-direction: row;
+    margin-bottom: 70px;
+  }
+}
+
+@media (max-width: 570px) {
+  .happy-cliens-text {  
+    width: 100px;
   }
 }

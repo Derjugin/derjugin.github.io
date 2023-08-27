@@ -110,7 +110,7 @@ form.addEventListener('submit', function(e) {
 
 
 // ВИДЕО
-  /* 
+  
 document.addEventListener('DOMContentLoaded', function() {
     let videoContainer = document.querySelector('.video-container');
     let videoWrapper = videoContainer.querySelector('.video-wrapper');
@@ -150,6 +150,6 @@ document.addEventListener('DOMContentLoaded', function() {
 function loadVideo(videoUrl) {
   let videoblock = document.querySelector('.videoblock');
   videoblock.innerHTML = '<iframe src="' + videoUrl + '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
-} */
+}
 
   // КОНЕЦ

@@ -1630,6 +1630,11 @@ height: 600px;
     flex-direction: row;
     margin-bottom: 70px;
   }
+
+  .ellipse-img {
+  max-width: 100%;
+  }
+  
 }
 
 @media (max-width: 570px) {

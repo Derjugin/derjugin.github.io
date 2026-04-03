@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>АЛЬКОР ХОЛДИНГ ГРУПП</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* --- Общие стили --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #616161;
+            /* line-height: 1.5; */
+            font-weight: 400;
+            background-color: #fff;
+        }
+
+        .container {
+            max-width: 1030px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        /* --- БЛОК 1: Баннер --- */
+        .banner {
+            height: 460px;
+            display: flex;
+            background-color: #F5F3F2;
+        }
+
+        .banner-content {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .banner-left {
+            width: 580px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .banner-left h1 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 34px;
+            line-height: 100%;
+            color: #4D4D4D;
+        }
+
+        .banner-left p {
+            margin-bottom: 61px;
+            font-size: 21px;
+            line-height: 31px;
+            color: #616161;
+        }
+
+        .banner-buttons {
+            display: flex;
+            gap: 14px;
+        }
+
+        .btn {
+            width: 263px;
+            height: 43px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 400;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .btn-green {
+            background-color: #0D663A;
+            color: #fff;
+        }
+
+        .btn-grey {
+            background-color: #F5F5F5;
+            color: #616161;
+            border: 1px solid #D6DADD;
+        }
+
+        .banner-right {
+            width: 420px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .banner-right img {
+            position: absolute;
+            width: auto;
+            height: auto;
+            object-fit: cover;
+            margin-left: -155px;
+            top: 5px;
+        }
+
+        /* --- БЛОК 2: О компании --- */
+        .about-section {
+            padding: 80px 0;
+            background-color: #F9F7F6;
+        }
+
+        .about-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .about-left {
+            width: 43%;
+        }
+
+        h2 {
+            color: #4D4D4D;
+            font-size: 32px;
+            font-weight: 500;
+        }
+
+        .about-left h2,
+        .about-right h2 {
+            margin-bottom: 60px;
+        }
+
+        .about-left p {
+            font-size: 18px;
+            color: #616161;
+            margin-bottom: 40px;
+        }
+
+        .check-list {
+            list-style: none;
+        }
+
+        .check-list li {
+            font-size: 18px;
+            color: #616161;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .check-list li img {
+            width: 24px;
+            height: 24px;
+            margin-right: 12px;
+        }
+
+        /* Разделитель */
+        .divider {
+            width: 1px;
+            height: 430px;
+            background-color: #E0E0E0;
+            margin: 0 34px;
+        }
+
+        .about-right {
+            width: auto;
+        }
+
+        .about-right h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+        }
+
+        .info-card {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-start;
+            width: 243px;
+            height: 137px;
+            padding: 14px;
+            line-height: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px 0px #0000000F;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 18px;
+        }
+
+        .card-header-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 34px;
+            min-width: 34px;
+            height: 34px;
+            margin-right: 10px;
+            background: #F5F5F5;
+            border-radius: 50%;
+        }
+
+        .card-header img {
+            width: auto;
+        }
+
+        .card-header span {
+            font-size: 18px;
+            color: #616161;
+            font-weight: 500;
+        }
+
+        .card-text {
+            font-size: 18px;
+            color: #969696;
+        }
+
+        /* --- БЛОК 3: Раскрытие информации (Табы) --- */
+        .disclosure-section {
+            padding: 60px 0 30px 0;
+            background-color: #F9F7F680;
+        }
+
+        .disclosure-header {
+            margin-bottom: 30px;
+        }
+
+        .disclosure-header h2 {
+            margin-bottom: 60px;
+        }
+
+        .disclosure-header p {
+            font-size: 18px;
+            color: #616161;
+        }
+
+        .tabs-nav {
+            display: flex;
+            margin-bottom: 44px;
+        }
+
+        .tab-btn {
+            width: 138px;
+            height: 44px;
+            font-size: 16px;
+            font-weight: 600;
+            border: 1px solid #D6DADD;
+            background-color: #fff;
+            color: #616161;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .tab-btn:first-child {
+            border-radius: 10px 0 0 10px;
+        }
+
+        .tab-btn:last-child {
+            border-radius: 0 10px 10px 0;
+        }
+
+        .tab-btn.active {
+            background-color: #0D663A;
+            color: #fff;
+            border: 1px solid #0D663A;
+        }
+
+        .tab-content {
+            display: none;
+            justify-content: space-between;
+        }
+
+        .tab-content.active {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            /* Отступ между карточками документов */
+        }
+
+        .doc-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 321px;
+            height: 215px;
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px 30px;
+            box-shadow: 0px 0px 15px 0px #0000000F;
+        }
+
+        .doc-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .doc-icon {
+            width: 40px;
+            height: 32px;
+        }
+
+        .pdf-badge {
+            display: flex;
+            justify-content: center;
+            width: 52px;
+            height: 26px;
+            font-size: 14px;
+            line-height: 16px;
+            font-weight: 400;
+            text-transform: uppercase;
+            align-items: center;
+            border: 1px solid #D6DADD;
+            border-radius: 30px;
+            color: #616161;
+            background-color: #F5F5F5;
+        }
+
+        .doc-info h4 {
+            font-size: 20px;
+            color: #4D4D4D;
+            margin-bottom: 5px;
+            font-weight: 400;
+        }
+
+        .doc-info span {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 35px;
+            color: #969696;
+        }
+
+        .doc-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            align-self: flex-end;
+            width: 138px;
+            height: 42px;
+            font-size: 18px;
+            background-color: #F5F5F5;
+            border: 1px solid #D6DADD;
+            border-radius: 10px;
+            color: #616161;
+            text-decoration: unset;
+            cursor: pointer;
+        }
+
+        /* --- БЛОК 4: Контакты --- */
+        .contacts-section {
+            padding: 30px 0;
+            background-color: #F9F7F680;
+        }
+
+        .contacts-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0px 0px 15px 0px #0000000F;
+        }
+
+        .contacts-left {
+            /* width: 40%; */
+            padding: 30px;
+        }
+
+        .contacts-left h2 {
+            font-size: 33px;
+            color: #4D4D4D;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: #616161;
+        }
+
+        .contact-item img {
+            width: 24px;
+            height: 24px;
+            margin-right: 15px;
+        }
+
+        .contact-item a {
+            font-size: 18px;
+            color: #616161;
+            text-decoration: none;
+        }
+
+        .contacts-right {
+            width: 55%;
+            height: 300px;
+            background: #eee;
+        }
+
+        .footer-text {
+            margin-top: 67px;
+            border-top: 1px solid #CCCCCC;
+            padding-top: 30px;
+            font-size: 15px;
+            text-align: center;
+            color: #9D9D9D;
+        }
+
+        /* Стили для контейнера карты */
+        .contacts-right {
+            width: 55%;
+            /* height: 300px; */
+            background: #eee;
+            border-radius: 0 10px 10px 0;
+            overflow: hidden;
+        }
+
+        #map {
+            width: 485px;
+            /* height: 288px; */
+        }
+
+        .ymaps-2-1-79-ground-pane {
+            filter: grayscale(100%) brightness(95%);
+        }
+
+
+
+        /* --- АДАПТИВНОСТЬ (Mobile) --- */
+        @media (max-width: 768px) {
+            .banner {
+                height: auto;
+                padding: 40px 0;
+            }
+
+            .banner-content {
+                flex-direction: column-reverse;
+            }
+
+            .banner-left,
+            .banner-right {
+                width: 100%;
+                text-align: center;
+            }
+
+            .banner-left {
+                padding-right: 0;
+                margin-top: 30px;
+            }
+
+            .banner-buttons {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .about-wrapper {
+                flex-direction: column;
+            }
+
+            .about-left,
+            .about-right {
+                width: 100%;
+            }
+
+            .about-left {
+                margin-bottom: 30px;
+            }
+
+            .divider {
+                display: none;
+            }
+
+            .cards-grid {
+                justify-content: center;
+            }
+
+            .info-card {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .tab-content.active {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .doc-card {
+                width: 80%;
+            }
+
+            .contacts-wrapper {
+                flex-direction: column;
+            }
+
+            .contacts-left,
+            .contacts-right {
+                width: 100%;
+            }
+
+            .contact-item {
+                /* justify-content: center; */
+                /* text-align: center; */
+            }
+
+            .contact-item img {
+                margin-left: 10px;
+            }
+
+            .contacts-right {
+                margin-top: 30px;
+                margin-bottom: 0px;
+                border-radius: 0 0 10px 10px;
+            }
+
+            #map {
+                width: 100%;
+                /* height: 288px; */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- БЛОК 1: Баннер -->
+    <header class="banner">
+        <div class="container">
+            <div class="banner-content">
+                <div class="banner-left">
+                    <h1>АЛЬКОР ХОЛДИНГ ГРУПП</h1>
+                    <p>Головная организация банковского холдинга,<br>в состав которого входит АКБ «АВАНГАРД»</p>
+                    <div class="banner-buttons">
+                        <a href="#disclosure" class="btn btn-green">Раскрытие информации</a>
+                        <a href="#contacts" class="btn btn-grey">Контакты</a>
+                    </div>
+                </div>
+                <div class="banner-right">
+                    <img src="img/sh.png" alt="main Image">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- БЛОК 2: О компании -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-wrapper">
+                <div class="about-left">
+                    <h2>О компании</h2>
+                    <p>ООО «АЛЬКОР ХОЛДИНГ ГРУПП» является головной организацией банковского холдинга, в состав которого
+                        входит Акционерный Коммерческий банк «АВАНГАРД» - публичное акционерное общество.</p>
+                    <ul class="check-list">
+                        <li>
+                            <img src="img/done.svg" alt="check">
+                            Основана в 2003 году
+                        </li>
+                        <li>
+                            <img src="img/done.svg" alt="check">
+                            Финансовая и инвестиционная деятельность
+                        </li>
+                        <li>
+                            <img src="img/done.svg" alt="check">
+                            Головная организация холдинга
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="about-right">
+                    <h2>Ключевые сведения</h2>
+                    <div class="cards-grid">
+                        <!-- Карточка 1 -->
+                        <div class="info-card">
+                            <div class="card-header">
+                                <div class="card-header-img">
+                                    <img src="img/vector.svg" alt="icon">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="card-header">
+                                    <span>ОГРН</span>
+                                </div>
+                                <div class="card-text">1037736024633</div>
+                            </div>
+                        </div>
+                        <!-- Карточка 2 -->
+                        <div class="info-card" style="flex-direction: column;">
+                            <div class="card-header" style="margin-bottom: 5px;">
+                                <div class="card-header-img">
+                                    <img src="img/passport.svg" alt="icon">
+                                </div>
+                                <span>ИНН / КПП</span>
+                            </div>
+                            <div>
+                                <!-- <div class="card-header"></div> -->
+                                <div class="card-text">7736238615 / 770801001</div>
+                            </div>
+                        </div>
+                        <!-- Карточка 3 -->
+                        <div class="info-card">
+                            <div class="card-header">
+                                <div class="card-header-img">
+                                    <img src="img/file-multiple.svg" alt="icon">
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="card-header">
+                                    <span>Основной <br>вид деятельности</span>
+                                </div>
+                                <div class="card-text">Вложения<br>в ценные бумаги</div>
+                            </div>
+                        </div>
+                        <!-- Карточка 4 -->
+                        <div class="info-card">
+                            <div class="card-header">
+                                <div class="card-header-img">
+                                    <img src="img/edit-contained.svg" alt="icon">
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="card-header">
+                                    <span>Регистрация</span>
+                                </div>
+                                <div class="card-text">МИФНС № 46</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- БЛОК 3: Раскрытие информации -->
+    <section class="disclosure-section" id="disclosure">
+        <div class="container">
+            <div class="disclosure-header">
+                <h2>Раскрытие информации</h2>
+                <p>Официальные документы и отчетность компании</p>
+            </div>
+
+            <div class="tabs-nav">
+                <button class="tab-btn active" onclick="openTab(event, '2025')">2025</button>
+                <button class="tab-btn" onclick="openTab(event, '2026')">2026</button>
+                <button class="tab-btn" onclick="openTab(event, '2027')">2027</button>
+            </div>
+
+            <!-- Вкладка 2025 -->
+            <div id="2025" class="tab-content active">
+                <!-- Блок документа 1 -->
+                <div class="doc-card">
+                    <div class="doc-top">
+                        <img src="img/bar.svg" class="doc-icon" alt="doc icon">
+                        <div class="pdf-badge">PDF</div>
+                    </div>
+                    <div class="doc-info">
+                        <h4>Документ 1</h4>
+                        <span>15 января 2025</span>
+                    </div>
+                    <button class="doc-btn">Открыть</button>
+                </div>
+                <!-- Блок документа 2 -->
+                <div class="doc-card">
+                    <div class="doc-top">
+                        <img src="img/doc.svg" class="doc-icon" alt="doc icon">
+                        <div class="pdf-badge">PDF</div>
+                    </div>
+                    <div class="doc-info">
+                        <h4>Документ 2</h4>
+                        <span>20 февраля 2025</span>
+                    </div>
+                    <a class="doc-btn" href="/docs/#">Открыть</a>
+                    <!-- <button class="doc-btn">Открыть</button> -->
+                </div>
+                <!-- Блок документа 3 -->
+                <div class="doc-card">
+                    <div class="doc-top">
+                        <img src="img/chat.svg" class="doc-icon" alt="doc icon">
+                        <div class="pdf-badge">PDF</div>
+                    </div>
+                    <div class="doc-info">
+                        <h4>Документ 3</h4>
+                        <span>10 марта 2025</span>
+                    </div>
+                    <button class="doc-btn">Открыть</button>
+                </div>
+            </div>
+
+            <!-- Вкладка 2026 (скрыта по умолчанию) -->
+            <div id="2026" class="tab-content">
+                <div class="doc-card">
+                    <div class="doc-top">
+                        <img src="img/doc.svg" class="doc-icon" alt="doc icon">
+                        <div class="pdf-badge">PDF</div>
+                    </div>
+                    <div class="doc-info">
+                        <h4>Отчет 2026</h4>
+                        <span>15 января 2026</span>
+                    </div>
+                    <button class="doc-btn">Открыть</button>
+                </div>
+            </div>
+
+            <!-- Вкладка 2027 (скрыта по умолчанию) -->
+            <div id="2027" class="tab-content">
+                <div class="doc-card">
+                    <div class="doc-top">
+                        <img src="img/doc.svg" class="doc-icon" alt="doc icon">
+                        <div class="pdf-badge">PDF</div>
+                    </div>
+                    <div class="doc-info">
+                        <h4>Отчет 2027</h4>
+                        <span>15 января 2027</span>
+                    </div>
+                    <button class="doc-btn">Открыть</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- БЛОК 4: Контакты -->
+    <footer class="contacts-section" id="contacts">
+        <div class="container">
+            <div class="contacts-wrapper">
+                <div class="contacts-left">
+                    <h2>Контакты</h2>
+
+                    <div class="contact-item">
+                        <img src="img/marker.svg" alt="icon">
+                        <span>129090, г. Москва,<br>Грохольский переулок, дом 29, корп. 1</span>
+                    </div>
+                    <div class="contact-item">
+                        <!-- Замените src на /img/icon2.svg -->
+                        <img src="img/phone.svg" alt="icon">
+                        <span>+7 (499) 230-30-73</span>
+                    </div>
+                    <div class="contact-item">
+                        <!-- Замените src на /img/icon3.svg -->
+                        <img src="img/email.svg" alt="icon">
+                        <a class="txttohtmllink" href="mailto:info@alkorholding.ru"
+                            title="Написать письмо">info@alkorholding.ru</a>
+                    </div>
+                </div>
+
+                <div class="contacts-right" id="map">
+                </div>
+            </div>
+            <div class="footer-text">
+                <p>ООО «АЛЬКОР ХОЛДИНГ ГРУПП» 129090, г. Москва, Грохольский переулок, дом 29, корпус 1</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Скрипт для переключения табов -->
+    <script>
+        function openTab(evt, year) {
+            var i, tabcontent, tablinks;
+
+            // Скрываем все содержимое табов
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove("active");
+            }
+
+            // Удаляем класс active со всех кнопок
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // Показываем текущий таб и добавляем класс active кнопке
+            document.getElementById(year).style.display = "flex";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+
+
+
+    <!-- Подключение Yandex Maps API -->
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=af8ce9ca-a6df-4ebc-852f-6a7d32c9bac5&lang=ru_RU"
+        type="text/javascript"></script>
+
+    <script>
+        // Инициализация карты
+        ymaps.ready(init);
+
+        function init() {
+            // Создаем карту с центром в нужной точке (замените координаты на свои)
+            var myMap = new ymaps.Map("map", {
+                center: [55.777722, 37.643507], // Координаты вашего здания
+                zoom: 16,
+                controls: ['zoomControl'] // Оставляем только зум
+            }, {
+                // Отключаем стандартные элементы управления
+                searchControlProvider: 'yandex#search'
+            });
+
+
+            // Добавляем кастомную метку со зданием
+            var myPlacemark = new ymaps.Placemark([55.777722, 37.643507], {
+                hintContent: 'ООО «АЛЬКОР ХОЛДИНГ ГРУПП»',
+                balloonContent: '<strong>АЛЬКОР ХОЛДИНГ ГРУПП</strong><br>129090, г. Москва,Грохольский переулок, дом 29, корп. 1'
+            }, {
+                // Кастомная иконка
+                iconLayout: 'default#image',
+                iconImageHref: 'img/geomap.svg',
+                iconImageSize: [52, 52], // Размер иконки
+                iconImageOffset: [-26, -26] // Смещение для центрирования (половина размера)
+            });
+
+            myMap.geoObjects.add(myPlacemark);
+
+            // скролл зума колесиком (опционально)
+            myMap.behaviors.enable('scrollZoom');
+        }
+    </script>
+
+
+
+</body>
+
+</html>
